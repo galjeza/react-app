@@ -53,7 +53,7 @@ const ExpensePrice = styled.div`
 export default function ExpenseItem(props) {
   return (
     <Container>
-      <div>{props.date}</div>
+      <div>{props.date.toISOString().substring(0, 10)}</div>
       <ExpenseItemDescription>
         <ExpenseTitle>{props.title}</ExpenseTitle>
         <ExpensePrice>{props.price}€</ExpensePrice>
