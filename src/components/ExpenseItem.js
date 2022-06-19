@@ -5,10 +5,10 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.05rem;
+  padding: 0.5rem;
   margin: 1rem 0;
   border-radius: 10px;
-  background-color: #eeeeee;
+  background-color: #3a3a3a;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
@@ -29,7 +29,7 @@ const ExpenseItemDescription = styled.div`
 `;
 
 const ExpenseTitle = styled.h2`
-  color: #3a3a3a;
+  color: #eeeeee;
   font-size: 1rem;
   flex: 1;
   margin: 0 1rem;
@@ -41,9 +41,9 @@ const ExpenseTitle = styled.h2`
 const ExpensePrice = styled.div`
   font-size: 1rem;
   font-weight: bold;
-  color: #3a3a3a;
-  background-color: #eeeeee;
-  border: 1px solid #3a3a3a;
+  color: #eeeeee;
+  background-color: #3a3a3a;
+  border: 1px solid #eeeeee;
   padding: 0.5rem;
   border-radius: 12px;
   @media (main-width: 500px) {
