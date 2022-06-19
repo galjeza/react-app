@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import ExpenseDate from "./ExpenseDate";
+
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
@@ -7,6 +9,7 @@ const Container = styled.div`
   margin: 1rem 0;
   border-radius: 10px;
   background-color: #eeeeee;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
 const ExpenseItemDescription = styled.div`
@@ -23,7 +26,6 @@ const ExpenseItemDescription = styled.div`
     justify-content: flex-start;
     flex: 1;
   }
-
 `;
 
 const ExpenseTitle = styled.h2`
@@ -31,7 +33,7 @@ const ExpenseTitle = styled.h2`
   font-size: 1rem;
   flex: 1;
   margin: 0 1rem;
-  @media(main-width:500px){
+  @media (main-width: 500px) {
     font-size: 1.25rem;
   }
 `;
@@ -44,16 +46,19 @@ const ExpensePrice = styled.div`
   border: 1px solid #3a3a3a;
   padding: 0.5rem;
   border-radius: 12px;
-  @media(main-width:500px){
+  @media (main-width: 500px) {
     font-size: 1.25rem;
     padding: 0.5rem 1.5rem;
   }
 `;
 
 export default function ExpenseItem(props) {
+  const month = props.date.toLocaleDateString("en-US", { month: "long" });
+  const day = props.date.toLocaleDateString("en-US", { day: "2-digit" });
+  const year = props.date.getFullYear();
   return (
     <Container>
-      <div>{props.date.toISOString().substring(0, 10)}</div>
+      <ExpenseDate date={props.date} />
       <ExpenseItemDescription>
         <ExpenseTitle>{props.title}</ExpenseTitle>
         <ExpensePrice>{props.price}€</ExpensePrice>
