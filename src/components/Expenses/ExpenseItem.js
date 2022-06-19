@@ -1,15 +1,14 @@
 import styled from "styled-components";
 import ExpenseDate from "./ExpenseDate";
+import Card from "../UI/Card"
 
-const Container = styled.div`
+const Container = styled(Card)`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
   margin: 1rem 0;
-  border-radius: 10px;
   background-color: #3a3a3a;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
 const ExpenseItemDescription = styled.div`
@@ -57,7 +56,7 @@ export default function ExpenseItem(props) {
   const day = props.date.toLocaleDateString("en-US", { day: "2-digit" });
   const year = props.date.getFullYear();
   return (
-    <Container>
+    <Container className={props.className}>
       <ExpenseDate date={props.date} />
       <ExpenseItemDescription>
         <ExpenseTitle>{props.title}</ExpenseTitle>
